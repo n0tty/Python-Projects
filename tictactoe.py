@@ -23,7 +23,7 @@ __________
   """
 
 #Instructions
-def display_instruct():
+def instruct():
   """Game instructions."""
   print \
   """
@@ -36,7 +36,7 @@ def display_instruct():
   6|7|8
   """
 
-#ask_yes_no
+#yes or no
 def ask_yes_no(question):
   """Ask a yes or no question."""
   response = None
@@ -44,7 +44,7 @@ def ask_yes_no(question):
     response = raw_input(question).lower()
   return response
 
-#ask_number
+#ask input
 def ask_number(question, low, high):
   """Ask for a number within a range."""
   response = None
@@ -85,7 +85,7 @@ def display_board(board):
   print "\t", "----------"
   print "\n\t", board[6], "|", board[7], "|", board[8], "\n"
 
-#legal_moves
+#see if valid move
 def legal_moves(board):
   """Create list of legal moves."""
   moves = []
@@ -105,7 +105,7 @@ def winner(board):
     if EMPTY not in board:
       return TIE
 
-#homan's chance
+#human's chance
 def human_move(board, human):
   """Get Human move."""
   legal = legal_moves(board)
@@ -162,9 +162,9 @@ def congrat_winner(the_winner, computer, human):
   elif the_winner == TIE:
     print "Lucky this time... next time you won't get so close\n"
 
-#main
+#main function
 def main():
-  display_instruct()
+  instruct()
   computer, human = pieces()
   turn = X
   board = new_board()
