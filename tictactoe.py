@@ -7,6 +7,21 @@ EMPTY = " "
 TIE = "TIE"
 NUM_SQUARES = 9
 
+#Greetz
+def greet():
+  print \
+  """
+  TIC TAC TOE by n0tty\n
+  legendtanoybose@gmail.com
+  
+__________                     
+\\______   \\ ____  ______ ____  
+ |    |  _//  _ \\/  ___// __ \\ 
+ |    |   (  <_> )___ \\\\  ___/ 
+ |______  /\\____/____  >\\___  >
+        \\/           \\/     \\/ 
+  """
+
 #Instructions
 def display_instruct():
   """Game instructions."""
@@ -169,5 +184,6 @@ def main():
     congrat_winner(the_winner, computer, human)
 
 #start of prog
+greet()
 main()
 raw_input("\n\nPress enter key to quit.")
