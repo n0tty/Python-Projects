@@ -13,6 +13,7 @@ def greet():
   """
   TIC TAC TOE by n0tty\n
   legendtanoybose@gmail.com
+  http://the-bose.com
   
 __________                     
 \\______   \\ ____  ______ ____  
