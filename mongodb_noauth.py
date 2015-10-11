@@ -25,26 +25,31 @@ greet()
 import pymongo
 import time
 
-print ""
-print "Reason:"
-print "I built this because of unavailability of internet to download the 155+ MB of MongoDB client on a linux system to generate a PoC during a PenTest"
-print ""
+print \
+"""
 
-time.sleep(1)
+Reason:
+I built this because of unavailability of internet to download the 155+ MB of MongoDB client
+on a linux system to generate a PoC during a PenTest
+
+FYI:
+This code has not been tested and probably would not work in Python 3.0+
+This code has been tried and tested on Kali Linux 1.10 and Python version 2.7.3
+
+"""
+
 
 ip_address=raw_input("Please enter the IP address of the server: ")
 
-while True:
-        try:
-                port=input("Please input the port number (default is 27017): ")
-                if (port<=1 or port>=65535):
-                        port=27017
-                        print "You have entered a invalid port number and hence default port (27017) has been selected"
-                break
-        except SyntaxError:
-                print "You have entered a invalid port number and hence default port (27017) has been selected"
+
+try:
+        port=input("Please input the port number (default is 27017): ")
+        if (port<=1 or port>=65535):
                 port=27017
-                break
+                print "You have entered an invalid port number and hence default port (27017) has been selected"
+except SyntaxError:
+        print "You have entered an invalid port number and hence default port (27017) has been selected"
+        port=27017
 
 databases=[]
 
@@ -67,5 +72,5 @@ try:
 except pymongo.errors.ConnectionFailure,e:
         print "Failed to connect to the database: %s" % e
 
-
+conn.close()
 
